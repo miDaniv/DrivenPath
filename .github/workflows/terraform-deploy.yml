@@ -26,10 +26,10 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
 
       - name: Initialize Terraform
-        run: terraform init
+        run: cd terraform && terraform init
 
       - name: Plan Terraform
-        run: terraform plan
+        run: cd terraform && terraform plan
 
       - name: Apply Terraform
-        run: terraform apply -auto-approve
+        run: cd terraform && terraform apply -auto-approve
